@@ -43,7 +43,7 @@ namespace BarDrinks
 
         public Drink(string name)
         {
-
+            _name = name;
         }
 
         public Drink(string name, string description)

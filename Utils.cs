@@ -14,6 +14,7 @@ namespace BarDrinks
         }
 
 
+        //Рассчет стоимости напитков по чеку (все заказы одного клиента)
         public static double CalculateCheck(List<Drink> drinks)
         {
             double totalCost = 0.0;
