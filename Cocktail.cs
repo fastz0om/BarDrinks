@@ -59,5 +59,20 @@ namespace BarDrinks
             else
                 Cost -= drink.Cost;
         }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Cocktail cocktail &&
+                   base.Equals(obj) &&
+                   EqualityComparer<List<Drink>>.Default.Equals(_drinkList, cocktail._drinkList);
+        }
+
+        public override int GetHashCode()
+        {
+            var hashCode = 2041398414;
+            hashCode = hashCode * -1521134295 + base.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<List<Drink>>.Default.GetHashCode(_drinkList);
+            return hashCode;
+        }
     }
 }

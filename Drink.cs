@@ -68,25 +68,23 @@ namespace BarDrinks
             _bulk = bulk;
         }
 
-
         public override bool Equals(object obj)
         {
-            if (obj == null)
-                return false;
-
-            if (!(obj is Drink drink))
-                return false;
-
-            return Name.Equals(drink.Name) && Description.Equals(drink.Description)
-                    && Cost.Equals(drink.Cost) && Bulk.Equals(drink.Bulk);
+            return obj is Drink drink &&
+                   _name == drink._name &&
+                   _description == drink._description &&
+                   _cost == drink._cost &&
+                   _bulk == drink._bulk;
         }
 
-
-        public bool Equals(Drink obj)
+        public override int GetHashCode()
         {
-            return Name.Equals(obj.Name) && Description.Equals(obj.Description)
-                    && Cost.Equals(obj.Cost) && Bulk.Equals(obj.Bulk);
+            var hashCode = -396274562;
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(_name);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(_description);
+            hashCode = hashCode * -1521134295 + _cost.GetHashCode();
+            hashCode = hashCode * -1521134295 + _bulk.GetHashCode();
+            return hashCode;
         }
-
     }
 }
