@@ -52,14 +52,6 @@ namespace BarDrinks
             _description = description;
         }
 
-        //public Drink(string name, string description, double cost, double bulk)
-        //{
-        //    _name = name;
-        //    _description = description;
-        //    _cost = cost;
-        //    _bulk = bulk;
-        //}
-
         public Drink(string name, string description = "", double cost = 0.0, double bulk = 0.0)
         {
             _name = name;

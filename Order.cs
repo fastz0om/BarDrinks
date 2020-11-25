@@ -50,8 +50,6 @@ namespace BarDrinks
             return value;
         }
 
-
-
         public override int GetHashCode()
         {
             var hashCode = -1788977986;
@@ -74,10 +72,5 @@ namespace BarDrinks
 
             return value;
         }
-
-
-
-
-
     }
 }
